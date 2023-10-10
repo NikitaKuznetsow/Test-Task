@@ -1,5 +1,5 @@
 Final SQL Statement 
-'''
+```
 WITH cnt_flights AS (
     SELECT
         Id_Psg,
@@ -57,6 +57,4 @@ WHERE
         FROM
             cnt_flights
     );
-
-
-'''
+```
