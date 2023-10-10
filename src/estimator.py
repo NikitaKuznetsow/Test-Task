@@ -91,7 +91,6 @@ class ModelEvaluator:
             y_test (pd.Series): The testing target labels.
         """
 
-        # Calculate ROC curves and AUC scores
         y_prob_train = self.model.predict_proba(X_train)[:, 1]
         y_prob_test = self.model.predict_proba(X_test)[:, 1]
         fpr_train, tpr_train, _ = roc_curve(y_train, y_prob_train)
@@ -100,14 +99,12 @@ class ModelEvaluator:
         roc_auc_train = roc_auc_score(y_train, y_prob_train)
         roc_auc_test = roc_auc_score(y_test, y_prob_test)
 
-        # Calculate Precision-Recall curves and AUC scores
         precision_train, recall_train, _ = precision_recall_curve(y_train, y_prob_train)
         precision_test, recall_test, _ = precision_recall_curve(y_test, y_prob_test)
 
         pr_auc_train = auc(recall_train, precision_train)
         pr_auc_test = auc(recall_test, precision_test)
 
-        # Plot ROC curves
         plt.figure(figsize=(12, 4))
         plt.subplot(1, 2, 1)
         plt.plot(fpr_train, tpr_train, color='blue', lw=2, label=f'Train ROC Curve (AUC = {roc_auc_train:.2f})')
@@ -120,7 +117,6 @@ class ModelEvaluator:
         plt.title('Receiver Operating Characteristic (ROC) Curve')
         plt.legend(loc='lower right')
 
-        # Plot Precision-Recall curves
         plt.subplot(1, 2, 2)
         plt.plot(recall_train, precision_train, color='blue', lw=2, label=f'Train PR Curve (AUC = {pr_auc_train:.2f})')
         plt.plot(recall_test, precision_test, color='green', lw=2, label=f'Test PR Curve (AUC = {pr_auc_test:.2f})')
