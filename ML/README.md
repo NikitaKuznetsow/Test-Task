@@ -78,5 +78,4 @@ Log_loss:  3.773 6.659
 <img width="550" alt="image" src="https://github.com/NikitaKuznetsow/Test-Task/assets/66497711/ef14c85e-a7d9-4083-bf48-9d1e2374c4f4">
 
 ##### Conclusion
-In the course of solving this classification task, we experimented with three models: K-Nearest Neighbors (KNN), Logistic Regression, and LightGBM. After hyperparameter optimization, LightGBM achieved the highest ROC AUC score of approximately 0.785, outperforming the other models. These features exhibited substantial influence on the final predictions, as evidenced by the ALE (Accumulated Local Effects) plots.
-
+In the course of solving this classification task, we experimented with three models: K-Nearest Neighbors (KNN), Logistic Regression, and LightGBM. After hyperparameter optimization, LightGBM achieved the highest ROC AUC score of approximately 0.785, outperforming the other models. 
